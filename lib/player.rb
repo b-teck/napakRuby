@@ -46,7 +46,7 @@ module Napakalaki
   def  self.computeGoldCoinsValue(t=new.Array)
   end
  
-  def  self.canIBuyLevels(I)  
+  def  self.canIBuyLevels(i)  
   end
   
   def  self.applyPrize(p)
@@ -98,3 +98,4 @@ module Napakalaki
   end
   
   end
+end

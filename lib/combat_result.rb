@@ -6,7 +6,7 @@ module Napakalaki
     
     include Enumeration 
  
-    def initialize(WinAndWinGame , win, lose , LoseAndEscape, LoseAndDie)
+    def initialize (winAndWinGame , win, lose , loseAndEscape, loseAndDie)
        
       @@WAWG=WinAndWinGame 
       @@Win=win            
