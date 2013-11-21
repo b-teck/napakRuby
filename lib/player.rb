@@ -8,39 +8,58 @@ module Napakalaki
 
   class Player
     
-    def initialize(name,level,dead)
-      
-      @name=name
-      @level=level
-      @dead=dead
-      
-    end
-    
+  def initialize(name,level,dead)
+
+    @name=name
+    @level=level
+    @dead=dead
+
+  end
+  
+  @hiddenTreasures = Array.new;
+  @visibleTreasures = Array.new;
+  
   def Player(name)
   end
     
   def  self.bringToLife()
+    if(self.death==true)
+      self.death=false;
+    end
   end
+  
     
   def  self.getcombatLevel()
+    nivel=0;
+    
   end
    
   def  self.incrementLevels(i)
+    if(self.level+i<4)
+      level+=i
+    end
   end
   
   def  self.decrementLevels(i)
+    if(self.level-i>1)
+      level-=i
+    end
   end
    
   def  self.setPendingBadStuff(b)
   end
   
   def  self.dieifNoTreasures()
+    if(hiddenTreasures.size==0 && visibleTreasures==0)
+      self.death=true
+    end
   end
   
   def  self.discardNecklaceisVisible()
   end
   
   def  self.die()
+    self.death=true
   end
 
   def  self.computeGoldCoinsValue(t=new.Array)
