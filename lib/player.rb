@@ -18,6 +18,7 @@ module Napakalaki
   
   @hiddenTreasures = Array.new;
   @visibleTreasures = Array.new;
+  @pendingBadStuff;
   
   def Player(name)
   end
@@ -47,6 +48,7 @@ module Napakalaki
   end
    
   def  self.setPendingBadStuff(b)
+    pendingBadStuff=b;
   end
   
   def  self.dieifNoTreasures()
@@ -63,6 +65,7 @@ module Napakalaki
   end
 
   def  self.computeGoldCoinsValue(t=new.Array)
+    t.each { |i|.  }
   end
  
   def  self.canIBuyLevels(i)  
