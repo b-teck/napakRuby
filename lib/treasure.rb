@@ -8,6 +8,6 @@ class Treasure
     @goldCoins;
     @minBonus;
     @maxBonus;
-    @type;
+    @tipo;
   end
 end

@@ -65,7 +65,12 @@ module Napakalaki
   end
 
   def  self.computeGoldCoinsValue(t=new.Array)
-    t.each { |i|.  }
+    monedas=0
+    for i in t
+      monedas+=i.goldCoins
+    end
+    niveles=monedas/1000;
+    return niveles.ceil;
   end
  
   def  self.canIBuyLevels(i)  
@@ -116,7 +121,39 @@ module Napakalaki
   def  hasVisibleTreasures()
   end
 
-  def  getLevels()   
+  def  getLevels()
+      nivel=0
+      collar=false
+      
+      for i in hiddenTreasures
+        if (i.tipo=="necklace")
+          collar=true
+        end
+      end
+      
+      for j in visibleTreasures
+        if (j.tipo=="necklace")
+          collar=true
+        end
+      end
+ 
+      if(collar)
+        for h in hiddenTreasures
+          nivel+=h.maxBonus
+        end
+        for v in visibleTreasures
+          nivel+=v.maxBonus
+        end
+      else
+        for h in hiddenTreasures
+          nivel+=h.minBonus
+        end
+        for v in visibleTreasures
+          nivel+=v.minBonus
+        end
+      end
+      nivel+=self.level;
+      return nivel;
   end
   
   end
