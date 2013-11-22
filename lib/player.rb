@@ -18,7 +18,7 @@ module Napakalaki
   
   @hiddenTreasures = Array.new;
   @visibleTreasures = Array.new;
-  @pendingBadStuff;
+  @pendingBadStuff ;
   
   def Player(name)
   end
@@ -73,28 +73,51 @@ module Napakalaki
     return niveles.ceil;
   end
  
-  def  self.canIBuyLevels(i)  
+  def  self.canIBuyLevels(l) 
+    if(self.level+l<=4)
+      return true
+    else
+      return false
+    end
   end
   
   def  self.applyPrize(p)
   end
   
   def  self.applyBadStuff(bad)
+    pendingBadStuff=bad;;
   end
    
   def  self.canMakeTreasureVisible(t)
   end
   
   def  self.howManyVisibleTreasures (tKind)
+    tesoros=0
+    for i in visibleTreasures
+      if (i.tipo == tKind)
+        tesoros=tesoros+1;
+      end
+    end
   end
   
   def  isDeath()
+    if(self.death)
+      return true
+    else
+      return false
+    end
   end
   
   def getHiddenTreasures()
+    for i in hiddenTreausures
+      puts i;
+    end
   end
    
   def getVisibleTreasures()
+    for i in visibleTreausures
+      puts i;
+    end
   end
   
   def combat(m)
@@ -119,6 +142,11 @@ module Napakalaki
   end
   
   def  hasVisibleTreasures()
+    if(visibleTreasures.size>0)
+      return true
+    else
+      return false
+    end
   end
 
   def  getLevels()
