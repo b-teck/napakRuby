@@ -21,6 +21,7 @@ module Napakalaki
   @pendingBadStuff ;
   
   def Player(name)
+    self.name=name
   end
     
   def  self.bringToLife()
