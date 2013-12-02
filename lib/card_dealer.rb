@@ -4,14 +4,21 @@ module Napakalaki_game
   
   class CardDealer 
     include Singleton 
- 
+    @unusedMonsters=Array.new,
+    @usedMonsters=Array.new,  
+    @unusedTreasures=Array.new,
+    @usedTreasures=Array.new;
+  
     def initialize(instance=NULL)
       
-      @instance=instance #Esto realmente no se si es asi.
+      @instance=instance 
       
     end
     
+    attr_accesor :unusedMonsters, :usedMonsters,  :unusedTreasures, :usedTreasure;
+    
     def self.initTreasureCardDeck()
+      
     end
     
     def self.initMonsterCardDeck()
@@ -24,19 +31,28 @@ module Napakalaki_game
     end
     
     def getInstance()
-      
+      return instance;
     end
     def nextMonster()
+      if(unusedTreasures.empty)
+             unusedTreasures = usedTreasures;
+             usedTreasures.clear;
+             (unusedTreasures);
+      end
+        tesoro = unusedTreasures.get();
+        unusedTreasures.remove(tesoro);
+        return tesoro;
       
     end
-    def giveTreasureBack
-      
+    def giveTreasureBack(t)
+      self.unusedTrasures.add(t);
     end
-    def giveMonsterBack
-      
+    def giveMonsterBack(m)
+      self.unusedMonster.add(m)
     end
     def initCard
-      
+        self.initMonsterCardDeck();
+        self.initTreasureCardDeck()
     end
     
   end 

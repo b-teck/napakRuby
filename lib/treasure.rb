@@ -3,6 +3,7 @@
 # and open the template in the editor.
 
 class Treasure
+  attr_accesor :name, :goldcoins, :minBonus, :maxBonus, :type;
   def initialize()
     @name;
     @goldCoins;
@@ -10,4 +11,6 @@ class Treasure
     @maxBonus;
     @tipo;
   end
+  
+  
 end
