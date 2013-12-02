@@ -33,8 +33,12 @@ module Napakalaki
     
   def  self.getcombatLevel()
     nivel=0;
-    
+    hiddenTreasures.each { |i| nivel+=i.MaxBonus  }
+    visibleTreasures.each { |i| nivel+=i.MaxBonus  }
+    return nivel
   end
+    
+ 
    
   def  self.incrementLevels(i)
     if(self.level+i<4)
@@ -90,6 +94,14 @@ module Napakalaki
   end
    
   def  self.canMakeTreasureVisible(t)
+    puede=false
+    for i in @hiddenTreasures
+      if (i == t && hiddenTreasures.size>4)
+        puede=true;
+        break;
+      end
+    end
+    return puede
   end
   
   def  self.howManyVisibleTreasures (tKind)
