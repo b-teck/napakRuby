@@ -16,6 +16,8 @@ module Napakalaki
 
   end
   
+  attr_accesor :hiddenTreasures, :visibleTreasures ,:pendingBadStuff
+  
   @hiddenTreasures = Array.new;
   @visibleTreasures = Array.new;
   @pendingBadStuff ;
@@ -66,7 +68,15 @@ module Napakalaki
   end
   
   def  self.die()
-    self.death=true
+    self.levels=1
+    for i in visibleTreasures
+      dealer.giveTreasureBack(i)
+    end
+    visibleTreasures.clear
+    for i in hiddenTreasures
+      dealer.giveTreasureBack(i)
+    end
+    hiddenTreasures.clear
   end
 
   def  self.computeGoldCoinsValue(t=new.Array)
@@ -90,7 +100,10 @@ module Napakalaki
   end
   
   def  self.applyBadStuff(bad)
-    pendingBadStuff=bad;;
+    nlevels=self.levels
+    self.decrementLevels(nlevels)
+    self.pendingBadStuff=bad.adjustToFitTreasureList(self.visibleTreasures, self.hiddenTreasures);
+    
   end
    
   def  self.canMakeTreasureVisible(t)
