@@ -87,4 +87,38 @@ class BadStuff
      end
    end
    
+  def adjustToFitTreasureLists(v,h)
+    vt=ArayList.new
+    ht=ArayList.new
+    for t in @specificVisibleTreasures
+      for m in v
+        if (t==m.getType)
+          vt.add(m)  
+        end
+      end
+    end
+    
+    for t in @specificHiddenTreasures
+      for m in h
+        if (t==m.getType)
+          ht.add(m)
+        end
+      end
+    end
+    return bc=BadStuff("",0,0,0,vt,vh,false)
+         
+  end
+  
+   def to_s
+        "BadStuf: #{@text} \n Levels: #{@levels}  \n Visible Treasures: #{@nVisibleTreasures} \n Hidden Treasures: #{@nHiddenTreasures} \n specific Hidden Treasures #{@specificHiddenTreasures} \n specific Visible Treasures #{@specificVisibleTreasures} \n"
+    end
+   
+  def myBadStuffIsDeath
+    if death
+      true
+    else
+      false
+    end
+  end
+  
 end
