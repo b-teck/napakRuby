@@ -17,11 +17,140 @@ module Napakalaki_game
     
     attr_accesor :unusedMonsters, :usedMonsters,  :unusedTreasures, :usedTreasure;
     
-    def self.initTreasureCardDeck()
+    def self.initTreasureCardDeck
+      #Mazo de tesoros
+      
+      #Si mi amo
+      tr_miamo=Treasure.new("Si mi amo",0,4,7,[HELMET])
+      unusedTreasures<<tr_miamo
+        
+      #Botas de investigacion
+      tr_investigacion=Treasure.new("Botas de Investigacion",600,3,4,[SHOE])
+      unusedTreasures<<tr_investigacion
+        
+      #Capucha de Cthulhu
+      tr_capucha=Treasure.new("Capucha de Cthulhu",500,3,5,[HELMET])
+      unusedTreasures<<tr_capucha
+
+      #A prueba de Babas
+      tr_babas=Treasure.new("A prueba de Babas",400,2,5,[ARMOR])
+      unusedTreasures<<tr_babas
+        
+      #Botas de lluvia
+      tr_lluvia=Treasure.new("Botas de Lluvia",800,1,1,[BOTHHAND])
+      unusedTreasures<<tr_lluvia
+      
+      #Casco minero
+      tr_casco=Treasure.new("Casco Minero",400,2,4,[HELMET])
+          unusedTreasures<<tr_casco
+          
+      #Ametralladora Thompson
+      tr_thompson=Treasure.new("Ametralladora Thompson",600,4,8)
+      unusedTreasures<<tr_thompson
+      
+      #Camiseta de la UGR
+      tr_ugr=Treasure.new("Camiseta d ela UGR",100,1,7,[ARMOR])
+      unusedTreasures<<tr_ugr
+          
+      #Clavo de rail ferroviario
+      tr_clavo=Treasure.new("Clavo de Rail Ferroviario",400,3,6,[ONEHAND])
+      unusedTreasures<<tr_clavo
+      
+      #Cuchillo de sushi arcano
+      tr_cuchillo=Treasure.new("Cuchillo de sushi Arcano",300,2,3,[ONEHAND])
+      unusedTreasures<<tr_cuchillo
+       
+      #Fez alópodo
+      tr_fez=Treasure.new("Fez alopodo",700,3,5,[HELMET])
+      unusedTreasures<<tr_fez
+      
+      #Hacha Prehistorica
+      tr_hacha=Treasure.new("Hacha Prehistorico",500,2,5,[ONEHAND])
+      unusedTreasures<<tr_hacha
+      
+      #El aparato del PR. Tesla
+      tr_tesla=Treasure.new("EL aparato del Pr.Tesla",900,4,8,[ARMOR])
+      unusedTreasures<<tr_tesla
+      
+      #Gaita
+      tr_gaita=Treasure.new("Gaita",500,4,5,[BOTHHAND])
+      unusedTreasures<<tr_gaita
+      
+      #Insecticida
+      tr_insecticida=Treasure.new("Insecticida",300,2,3,[ONEHAND])
+      unusedTreasures<<tr_insecticida
+           
+      #Escopeta de Tres cañones
+      tr_escopeta=Treasure.new("Escopeta de 3 cañones",700,4,6,[BOTHHAND])
+      unusedTreasures<<tr_escopeta
+         
+      #Garabato Mistico
+      tr_garabato=Treasure.new("Garabato Mistico",300,2,2,[ONEHAND])
+      unusedTreasures<<tr_garabato
+      
+      #LA fuerza de MR.T
+      tr_T=Treasure.new("La Fuerza de MR.T",1000,0,0,[NECKLACE])
+      unusedTreasures<<tr_T
+      
+      #LA rebeca metalica
+      tr_metallica=Treasure.new("La Rebeca Metallica",400,2,3,[ARMOR])
+      unusedTreasures<<tr_metallica
+      
+      #Mazo de los antiguos
+      tr_antiguos=Treasure.new("Mazo de los antiguos",200,3,4,[ONEHAND])
+      unusedTreasures<<tr_antiguos
+      
+      #Necroplayboycon
+      tr_play=Treasure.new("Necroplayboycon",300,3,5,[ONEHAND])
+      unusedTreasures<<tr_play
+      
+      #Lanzallamas
+      tr_llamas=Treasure.new("Lanzallamas",800,4,8,[BOTHHAND])
+      unusedTreasures<<tr_llamas
+      
+      #Necrocomicon
+      tr_necro=Treasure.new("Necrocomicon",100,1,1,[ONEHAND])
+      unusedTreasures<<tr_necro
+     
+      #Necronomicon
+      tr_micon=Treasure.new("Necronomico",800,5,7,[BOTHHAND])
+      unusedTreasures<<tr_micon
+      
+      #Linterna a dos manos
+      tr_linterna=Treasure.new("Linterna a 2 manos",400,3,6,[BOTHHAND])
+      unusedTreasures<<tr_linterna
+      
+      #Necrognomicon
+      tr_gnomo=Treasure.new("Necrognomicon",200,2,4,[ONEHAND])
+      unusedTreasures<<tr_gnomo
+            
+      #Necrotelecom
+      tr_tele=Treasure.new("Necrotelecom",300,2,3,[HELMET])
+      unusedTreasures<<tr_tele
+      
+      #Porra Preternatural
+      tr_porra=Treasure.new("Porra Preternatual",200,2,3,[ONEHAND])
+      unusedTreasures<<tr_porra
+
+      #Tentaculo de pega
+      tr_culo=Treasure.new("Tentaculo de pega",200,0,1,[HELMET])
+      unusedTreasures<<tr_culo
+      
+      #Zapatos deja-amigos
+      tr_zapato=Treasure.new("Zapato deja-amigos",500,0,1,[SHOE])
+      unusedTreasures<<tr_zapato
+
+      #Shogulador
+      tr_shogulador=Treasure.new("Shogulador",600,1,1,[BOTHHAND])
+      unusedTreasures<<tr_shogulador
+            
+      #Varita de atizamiento
+      tr_varita=Treasure.new("Varita de Atizamiento",400,3,4,[ONEHAND])
+      unusedTreasures<<tr_varita
     end
     
   
-    def self.initMonsterCardDeck()
+    def self.initMonsterCardDeck
       
       #Byakhees de bonanza.
       prBonanza=Prize.new(2,1)
@@ -182,70 +311,67 @@ module Napakalaki_game
     
     #Mazo sectarios
     
-    def self.initCultistCardDeck()
-      unusedCultists.push(Cultist.new('Sectario',1))
-      unusedCultists.push(Cultist.new('Sectario',2))
-      unusedCultists.push(Cultist.new('Sectario',1))
-      unusedCultists.push(Cultist.new('Sectario',2))
-      unusedCultists.push(Cultist.new('Sectario',1))
-      unusedCultists.push(Cultist.new('Sectario',1))
+    def self.initCultistCardDeck
+      unusedCultists.add(Cultist.new('Sectario',1))
+      unusedCultists.add(Cultist.new('Sectario',2))
+      unusedCultists.add(Cultist.new('Sectario',1))
+      unusedCultists.add(Cultist.new('Sectario',2))
+      unusedCultists.add(Cultist.new('Sectario',1))
+      unusedCultists.add(Cultist.new('Sectario',1))
     end
     
-    def self.shuffleTreasures()
+    def self.shuffleTreasures
+      unusedTreasures.shuffle
     end
     
     def self.shuffleMonsters
+      unusedMonsters.shuffle
+    end
+    
+    def self.shuffleCultist
+      unusedCultists.shuffle
     end
     
     def getInstance()
       return instance;
     end
     
-  def nextMonster()
-      if(unusedMonsters.empty)
-             unusedMonsters = usedMonsters
-             usedMonsters.clear
-             (unusedMonsters)
-      end
-        monster = unusedMonsters.get()
-        unusedMonsters.remove(monster)
-        return monster
-      
+    def nextMonster()
+      if unusedMonsters.length==0
+         unusedMonsters=usedMonsters
+         shuffleMonsters
+       end
+       tmp=unusedMonsters.pop
+       return tmp
     end
     
     def nextCultist()
-      if(unusedCultists.emoty)
-             unusedCultists = usedCultists
-             usedCultists.clear
-             (unusedCultists)
-      end
-      cultists = unusedCultists.get()
-      unusedCultists.remove(cultists)
-      return cultists
+      shuffleCultist
+         tmp=unusedCultist.pop
+         return tmp  
     end
     
     def nextTresaure()
-      if(unusedTreasures.emoty)
-             unusedTreasures = usedTreasures
-             usedTreasures.clear
-             (unusedTreasures)
-      end
-      tesoro = unusedTreasures.get()
-      unusedTreasures.remove(tesoro)
-      return tesoro
-    end
+      if unusedTreasures.length==0
+         unusedTreasures=usedTreasures
+         shuffleTreasures
+       end
+       tmp=unusedTreasures.pop
+       return tmp
+    end  
     
     def giveTreasureBack(t)
-      self.unusedTrasures.add(t);
+      unusedTreasures<<t
     end
     
     def giveMonsterBack(m)
-      self.unusedMonster.add(m)
+      unusedMonsters<<m
     end
+    
     def initCard
-        self.initMonsterCardDeck()
-        self.initTreasureCardDeck()
-        self.initCultistCardDeck()
+        initMonsterCardDeck
+        initTreasureCardDeck
+        initCultistCardDeck
     end
     
   end 
